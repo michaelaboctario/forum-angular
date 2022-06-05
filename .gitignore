@@ -1,6 +1,7 @@
 node_modules
 /dist
 forum-ang/src/assets/alls
+forum-ang/src/app/dist
 forum-ang/src/dist
 forum-ang/src/store/dist
 forum-ang/src/router/dist

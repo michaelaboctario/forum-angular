@@ -1,0 +1,10 @@
+<p>users works!</p>
+<h2>Les utilisateurs</h2>
+<ul class="users">
+  <li *ngFor="let user of users">
+    <div >
+      <span class="badge">{{user.id}}</span>
+      <span class="name">{{user.firstname}} {{user.lastname}}</span>
+    </div>
+  </li>
+</ul>
