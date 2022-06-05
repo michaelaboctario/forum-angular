@@ -1,0 +1,26 @@
+node_modules
+/dist
+forum-ang/src/assets/alls
+forum-ang/src/dist
+forum-ang/src/store/dist
+forum-ang/src/router/dist
+forum-ang/src/services/dist
+forum-ang/dist/
+forum-ang/src/store/products.js
+
+backend/dist
+backend/middleware/dist/
+backend/controllers/dist
+backend/models/dist
+backend/routes/dist
+backend/config/dist
+backend/images
+
+# local env files
+.env.local
+.env.*.local
+backend/.env
+backend/config/db.config.js
+# backend/config/user.config.js
+# backend/config/post.config.js
+# backend/config/post.config-template.js
