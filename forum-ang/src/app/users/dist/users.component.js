@@ -8,12 +8,18 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 exports.__esModule = true;
 exports.UsersComponent = void 0;
 var core_1 = require("@angular/core");
-var mock_users_1 = require("../mock-users");
 var UsersComponent = /** @class */ (function () {
-    function UsersComponent() {
-        this.users = mock_users_1.USERS;
+    function UsersComponent(userService) {
+        this.userService = userService;
+        this.users = [];
     }
     UsersComponent.prototype.ngOnInit = function () {
+        this.getUsers();
+    };
+    UsersComponent.prototype.getUsers = function () {
+        var _this = this;
+        this.userService.getUsers()
+            .subscribe(function (users) { return _this.users = users; });
     };
     UsersComponent = __decorate([
         core_1.Component({
