@@ -1,0 +1,43 @@
+<p>post-form works!</p>
+<form (ngSubmit)="onSubmit()" #postForm="ngForm">
+    {{ model | json }}
+    <div class="form-group">
+    <label for="title">Title</label>
+    <input type="text" class="form-control" id="postTitle"
+            required
+            [(ngModel)]="model.postTitle" name="postTitle" #postTitle="ngModel">
+    </div>
+    <div [hidden]="postTitle.valid || postTitle.pristine"
+     class="alert alert-danger">
+     Le title est obligatoire
+    </div>
+    <div class="form-group">
+    <label for="postContent">Contenu</label>
+    <input type="text"  class="form-control" id="postContent"
+            required
+            [(ngModel)]="model.postContent" name="postContent" #postContent="ngModel">
+    </div>
+    <div [hidden]="postContent.valid || postContent.pristine"
+     class="alert alert-danger">
+     Le contenu est obligatoire
+    </div>
+
+    <button type="submit" class="btn btn-success" [disabled]="!postForm.form.valid">Publier</button>
+    <button type="button" class="btn btn-default" (click)="newPost(); postForm.reset()">Nouveau message</button>
+</form>
+
+<div [hidden]="!submitted">
+    <h2>Vous avez saisi le contenu suivant:</h2>
+    <div class="row">
+      <div class="col-xs-3">Title</div>
+      <div class="col-xs-9">{{ model.postTitle }}</div>
+    </div>
+    <div class="row">
+      <div class="col-xs-3">Contenu</div>
+      <div class="col-xs-9">{{ model.postContent }}</div>
+    </div>
+    <br>
+    <button type="button" class="btn btn-primary" (click)="submitted=false">Edit</button>
+</div>
+
+
