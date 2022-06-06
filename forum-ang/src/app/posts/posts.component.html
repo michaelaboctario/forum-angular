@@ -1,0 +1,10 @@
+<h2>Les messages</h2>
+<ul class="posts">
+  <li *ngFor="let post of posts">
+    <div >
+      <span class="badge">{{post.id}}</span>
+      <span class="name">{{post.postTitle}}</span>
+      <span class="name">{{post.postContent}}</span>
+    </div>
+  </li>
+</ul>

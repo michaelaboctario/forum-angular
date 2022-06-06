@@ -1,17 +1,17 @@
+import { Post } from './post';
 import { Injectable } from '@angular/core';
-import { User } from './user';
 import { Observable, of } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+
 @Injectable({
   providedIn: 'root'
 })
-export class UserService {
+export class PostService {
 
-  private usersUrl = 'http://localhost:3000/api/users';  // URL to web api
-
+  private postsUrl = 'http://localhost:3000/api/posts';  
   constructor(private http: HttpClient) { }
 
-  getUsers(): Observable<User[]> {
-    return this.http.get<User[]>(this.usersUrl);
+  getPosts(): Observable<Post[]> {
+    return this.http.get<Post[]>(this.postsUrl);
   }
 }
